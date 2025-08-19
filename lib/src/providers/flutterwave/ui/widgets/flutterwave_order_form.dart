@@ -6,9 +6,9 @@ class FlutterwaveOrderForm extends StatefulWidget {
   final FlutterwaveDataService dataService;
 
   const FlutterwaveOrderForm({
-    Key? key,
+    super.key,
     required this.dataService,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwaveOrderForm> createState() => _FlutterwaveOrderFormState();

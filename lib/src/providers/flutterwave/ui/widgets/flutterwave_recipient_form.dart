@@ -6,9 +6,9 @@ class FlutterwaveRecipientForm extends StatefulWidget {
   final FlutterwaveDataService dataService;
 
   const FlutterwaveRecipientForm({
-    Key? key,
+    super.key,
     required this.dataService,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwaveRecipientForm> createState() => _FlutterwaveRecipientFormState();

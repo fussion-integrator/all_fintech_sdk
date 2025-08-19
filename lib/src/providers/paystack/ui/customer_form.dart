@@ -7,11 +7,11 @@ class CustomerForm extends StatefulWidget {
   final String submitButtonText;
 
   const CustomerForm({
-    Key? key,
+    super.key,
     required this.onSubmit,
     this.initialData,
     this.submitButtonText = 'Create Customer',
-  }) : super(key: key);
+  });
 
   @override
   State<CustomerForm> createState() => _CustomerFormState();

@@ -23,13 +23,13 @@ class FlutterwaveClient {
 
   Future<ApiResponse<T>> get<T>(
     String endpoint, {
-    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? queryParams,
     T Function(dynamic)? fromJson,
   }) async {
     try {
       final uri = Uri.parse('$_baseUrl$endpoint');
-      final finalUri = queryParameters != null
-          ? uri.replace(queryParameters: queryParameters.map((k, v) => MapEntry(k, v.toString())))
+      final finalUri = queryParams != null
+          ? uri.replace(queryParameters: queryParams.map((k, v) => MapEntry(k, v.toString())))
           : uri;
 
       final response = await _httpClient.get(finalUri, headers: _headers);

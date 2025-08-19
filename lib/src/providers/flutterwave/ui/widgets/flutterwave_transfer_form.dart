@@ -7,10 +7,10 @@ class FlutterwaveTransferForm extends StatefulWidget {
   final FlutterwaveDataService dataService;
 
   const FlutterwaveTransferForm({
-    Key? key,
+    super.key,
     required this.currency,
     required this.dataService,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwaveTransferForm> createState() => _FlutterwaveTransferFormState();

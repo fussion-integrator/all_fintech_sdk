@@ -7,10 +7,10 @@ class FlutterwaveCustomerForm extends StatefulWidget {
   final FlutterwaveCustomer? customer;
 
   const FlutterwaveCustomerForm({
-    Key? key,
+    super.key,
     required this.dataService,
     this.customer,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwaveCustomerForm> createState() => _FlutterwaveCustomerFormState();

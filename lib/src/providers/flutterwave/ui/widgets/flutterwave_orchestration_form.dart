@@ -7,10 +7,10 @@ class FlutterwaveOrchestrationForm extends StatefulWidget {
   final bool isOrder;
 
   const FlutterwaveOrchestrationForm({
-    Key? key,
+    super.key,
     required this.dataService,
     this.isOrder = false,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwaveOrchestrationForm> createState() => _FlutterwaveOrchestrationFormState();

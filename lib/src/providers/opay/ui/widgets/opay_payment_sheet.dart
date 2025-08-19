@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../models/opay_models.dart';
-import '../../../../core/exceptions.dart';
 
 class OpayPaymentSheet extends StatefulWidget {
   final int amount;
@@ -17,7 +16,7 @@ class OpayPaymentSheet extends StatefulWidget {
   final Function()? onCancel;
 
   const OpayPaymentSheet({
-    Key? key,
+    super.key,
     required this.amount,
     this.currency = 'EUR',
     required this.orderNr,
@@ -30,7 +29,7 @@ class OpayPaymentSheet extends StatefulWidget {
     required this.onSuccess,
     required this.onError,
     this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   State<OpayPaymentSheet> createState() => _OpayPaymentSheetState();
@@ -44,7 +43,7 @@ class _OpayPaymentSheetState extends State<OpayPaymentSheet> {
   OpayPaymentChannel? _selectedChannel;
   String? _selectedBank;
   bool _isLoading = false;
-  Map<String, OpayChannelGroup> _availableChannels = {};
+  final Map<String, OpayChannelGroup> _availableChannels = {};
 
   final Map<OpayPaymentChannel, String> _channelTitles = {
     OpayPaymentChannel.banklink: 'Internet Banking',

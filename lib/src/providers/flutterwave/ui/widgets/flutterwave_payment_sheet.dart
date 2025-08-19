@@ -12,7 +12,7 @@ class FlutterwavePaymentSheet extends StatefulWidget {
   final FlutterwaveDataService dataService;
 
   const FlutterwavePaymentSheet({
-    Key? key,
+    super.key,
     required this.txRef,
     required this.amount,
     required this.currency,
@@ -20,7 +20,7 @@ class FlutterwavePaymentSheet extends StatefulWidget {
     required this.customer,
     this.customizations,
     required this.dataService,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwavePaymentSheet> createState() => _FlutterwavePaymentSheetState();

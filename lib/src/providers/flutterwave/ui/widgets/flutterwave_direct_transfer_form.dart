@@ -6,9 +6,9 @@ class FlutterwaveDirectTransferForm extends StatefulWidget {
   final FlutterwaveDataService dataService;
 
   const FlutterwaveDirectTransferForm({
-    Key? key,
+    super.key,
     required this.dataService,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwaveDirectTransferForm> createState() => _FlutterwaveDirectTransferFormState();

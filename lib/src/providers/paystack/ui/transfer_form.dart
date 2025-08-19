@@ -7,10 +7,10 @@ class TransferForm extends StatefulWidget {
   final List<TransferRecipient> recipients;
 
   const TransferForm({
-    Key? key,
+    super.key,
     required this.onSubmit,
     required this.recipients,
-  }) : super(key: key);
+  });
 
   @override
   State<TransferForm> createState() => _TransferFormState();

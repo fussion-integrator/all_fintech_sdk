@@ -9,6 +9,7 @@ import '../../../models/transfer.dart';
 import '../../../models/verification.dart';
 import '../paystack_client.dart';
 
+/// Paystack data service for API operations.
 class PaystackDataService {
   final PaystackClient _client;
 

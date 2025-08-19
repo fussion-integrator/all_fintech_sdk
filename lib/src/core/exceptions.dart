@@ -1,3 +1,4 @@
+/// Base exception for fintech operations.
 class FintechException implements Exception {
   final String message;
   final int? statusCode;
@@ -15,6 +16,7 @@ class FintechException implements Exception {
   String toString() => 'FintechException: $message';
 }
 
+/// Paystack-specific exception.
 class PaystackException extends FintechException {
   const PaystackException({
     required super.message,

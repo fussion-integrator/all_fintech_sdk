@@ -6,10 +6,10 @@ class ProductForm extends StatefulWidget {
   final ProductRequest? initialData;
 
   const ProductForm({
-    Key? key,
+    super.key,
     required this.onSubmit,
     this.initialData,
-  }) : super(key: key);
+  });
 
   @override
   State<ProductForm> createState() => _ProductFormState();

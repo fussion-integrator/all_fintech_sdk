@@ -2,6 +2,7 @@ import '../../../core/api_response.dart';
 import '../../../models/flutterwave_models.dart';
 import '../flutterwave_client.dart';
 
+/// Flutterwave data service for API operations.
 class FlutterwaveDataService {
   final FlutterwaveClient _client;
 

@@ -1,3 +1,4 @@
+/// Request model for creating a customer.
 class CustomerRequest {
   final String email;
   final String? firstName;
@@ -27,6 +28,7 @@ class CustomerRequest {
   }
 }
 
+/// Request model for creating a dedicated account.
 class DedicatedAccountRequest {
   final String customer;
   final String? preferredBank;

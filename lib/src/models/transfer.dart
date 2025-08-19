@@ -137,7 +137,9 @@ class BulkChargeRequest {
   const BulkChargeRequest({required this.charges});
 
   Map<String, dynamic> toJson() {
-    return charges.map((c) => c.toJson()).toList();
+    return {
+      'charges': charges.map((c) => c.toJson()).toList(),
+    };
   }
 }
 

@@ -5,9 +5,9 @@ class TransferRecipientForm extends StatefulWidget {
   final Function(TransferRecipientRequest) onSubmit;
 
   const TransferRecipientForm({
-    Key? key,
+    super.key,
     required this.onSubmit,
-  }) : super(key: key);
+  });
 
   @override
   State<TransferRecipientForm> createState() => _TransferRecipientFormState();
@@ -91,11 +91,11 @@ class _TransferRecipientFormState extends State<TransferRecipientForm> {
         border: OutlineInputBorder(),
         prefixIcon: Icon(Icons.account_balance),
       ),
-      items: [
-        const DropdownMenuItem(value: 'nuban', child: Text('NUBAN')),
-        const DropdownMenuItem(value: 'ghipss', child: Text('GHIPSS')),
-        const DropdownMenuItem(value: 'mobile_money', child: Text('Mobile Money')),
-        const DropdownMenuItem(value: 'basa', child: Text('BASA')),
+      items: const [
+        DropdownMenuItem(value: 'nuban', child: Text('NUBAN')),
+        DropdownMenuItem(value: 'ghipss', child: Text('GHIPSS')),
+        DropdownMenuItem(value: 'mobile_money', child: Text('Mobile Money')),
+        DropdownMenuItem(value: 'basa', child: Text('BASA')),
       ],
       onChanged: (value) {
         setState(() => _type = value!);

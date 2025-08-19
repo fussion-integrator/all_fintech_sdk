@@ -1,4 +1,3 @@
-import 'customer.dart';
 import 'transaction.dart';
 
 class Plan {

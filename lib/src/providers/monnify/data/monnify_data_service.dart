@@ -2,6 +2,7 @@ import '../../../core/api_response.dart';
 import '../../../models/monnify_models.dart';
 import '../monnify_client.dart';
 
+/// Monnify data service for API operations.
 class MonnifyDataService {
   final MonnifyClient _client;
 

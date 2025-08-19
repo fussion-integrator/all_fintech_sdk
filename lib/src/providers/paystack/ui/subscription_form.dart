@@ -8,11 +8,11 @@ class SubscriptionForm extends StatefulWidget {
   final List<Customer> customers;
 
   const SubscriptionForm({
-    Key? key,
+    super.key,
     required this.onSubmit,
     required this.plans,
     required this.customers,
-  }) : super(key: key);
+  });
 
   @override
   State<SubscriptionForm> createState() => _SubscriptionFormState();

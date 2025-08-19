@@ -11,13 +11,13 @@ class PaystackPaymentSheet extends StatefulWidget {
   final Function()? onCancel;
 
   const PaystackPaymentSheet({
-    Key? key,
+    super.key,
     required this.paymentRequest,
     required this.dataService,
     required this.onSuccess,
     required this.onError,
     this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   State<PaystackPaymentSheet> createState() => _PaystackPaymentSheetState();

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2024-12-19
+
+### Fixed
+- Fixed BulkChargeRequest toJson return type error
+- Added platform support for better pub.dev scoring
+- Resolved static analysis issues
+
 ## [1.0.0] - 2024-12-19
 
 ### Added

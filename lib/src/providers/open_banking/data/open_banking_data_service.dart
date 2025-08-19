@@ -1,6 +1,7 @@
 import '../models/open_banking_models.dart';
 import 'open_banking_client.dart';
 
+/// Open Banking data service for API operations.
 class OpenBankingDataService {
   final OpenBankingClient _client;
 

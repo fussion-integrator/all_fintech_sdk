@@ -116,7 +116,7 @@ class OpenBankingClient {
         return responseData;
       } else if (response.statusCode == 401) {
         _bearerToken = null; // Reset token for retry
-        throw FintechException('Unauthorized: Token expired or invalid');
+        throw const FintechException('Unauthorized: Token expired or invalid');
       } else {
         final error = responseData['message'] ?? 'Unknown error';
         throw FintechException('HTTP ${response.statusCode}: $error');

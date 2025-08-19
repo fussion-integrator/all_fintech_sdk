@@ -7,11 +7,11 @@ class OpenBankingSavingsSheet extends StatefulWidget {
   final Function()? onCancel;
 
   const OpenBankingSavingsSheet({
-    Key? key,
+    super.key,
     required this.savings,
     required this.onSavingsSelected,
     this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   State<OpenBankingSavingsSheet> createState() => _OpenBankingSavingsSheetState();

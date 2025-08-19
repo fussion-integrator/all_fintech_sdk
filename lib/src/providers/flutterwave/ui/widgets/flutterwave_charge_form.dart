@@ -7,10 +7,10 @@ class FlutterwaveChargeForm extends StatefulWidget {
   final String? customerId;
 
   const FlutterwaveChargeForm({
-    Key? key,
+    super.key,
     required this.dataService,
     this.customerId,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwaveChargeForm> createState() => _FlutterwaveChargeFormState();

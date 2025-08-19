@@ -1,3 +1,4 @@
+/// Represents a payment transaction.
 class Transaction {
   final int id;
   final String reference;

@@ -470,10 +470,10 @@ class CustomerListScreen extends StatefulWidget {
   final bool allowSelection;
 
   const CustomerListScreen({
-    Key? key,
+    super.key,
     required this.dataService,
     this.allowSelection = true,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomerListScreen> createState() => _CustomerListScreenState();
@@ -581,10 +581,10 @@ class CustomerTransactionsScreen extends StatefulWidget {
   final String customerCode;
 
   const CustomerTransactionsScreen({
-    Key? key,
+    super.key,
     required this.dataService,
     required this.customerCode,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomerTransactionsScreen> createState() => _CustomerTransactionsScreenState();

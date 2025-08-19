@@ -1,5 +1,6 @@
 import 'fintech_provider.dart';
 
+/// Configuration for fintech providers.
 class FintechConfig {
   final FintechProvider provider;
   final String apiKey;

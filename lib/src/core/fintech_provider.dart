@@ -1,3 +1,4 @@
+/// Available fintech providers.
 enum FintechProvider {
   paystack,
   flutterwave,

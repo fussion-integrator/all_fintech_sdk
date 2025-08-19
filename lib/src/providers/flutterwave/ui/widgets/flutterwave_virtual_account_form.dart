@@ -6,10 +6,10 @@ class FlutterwaveVirtualAccountForm extends StatefulWidget {
   final VoidCallback? onCancel;
 
   const FlutterwaveVirtualAccountForm({
-    Key? key,
+    super.key,
     required this.onSubmit,
     this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   State<FlutterwaveVirtualAccountForm> createState() => _FlutterwaveVirtualAccountFormState();

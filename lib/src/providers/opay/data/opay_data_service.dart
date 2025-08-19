@@ -1,6 +1,7 @@
 import '../models/opay_models.dart';
 import 'opay_client.dart';
 
+/// Opay data service for API operations.
 class OpayDataService {
   final OpayClient _client;
 

@@ -12,7 +12,7 @@ class MonnifyPaymentSheet extends StatefulWidget {
   final VoidCallback? onCancel;
 
   const MonnifyPaymentSheet({
-    Key? key,
+    super.key,
     required this.amount,
     required this.customerName,
     required this.customerEmail,
@@ -20,7 +20,7 @@ class MonnifyPaymentSheet extends StatefulWidget {
     required this.contractCode,
     required this.dataService,
     this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   State<MonnifyPaymentSheet> createState() => _MonnifyPaymentSheetState();
