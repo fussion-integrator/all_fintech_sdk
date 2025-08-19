@@ -328,9 +328,79 @@ await mockSDK.paystack.data.initializeTransaction(
 - [Migration Guide](https://github.com/chidiebere-edeh/all_fintech_sdk/blob/main/MIGRATION.md)
 - [Contributing](https://github.com/chidiebere-edeh/all_fintech_sdk/blob/main/CONTRIBUTING.md)
 
+## 🐛 Bug Reports & Feature Requests
+
+Found a bug or have a feature request? We'd love to hear from you!
+
+### 🔍 **Reporting Bugs**
+[**Report a Bug →**](https://github.com/chidiebere-edeh/all_fintech_sdk/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D+)
+
+**Before reporting:**
+- Check [existing issues](https://github.com/chidiebere-edeh/all_fintech_sdk/issues)
+- Include provider name, Flutter version, and error details
+- Provide minimal code example to reproduce
+
+### ✨ **Feature Requests**
+[**Request a Feature →**](https://github.com/chidiebere-edeh/all_fintech_sdk/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BFEATURE%5D+)
+
+**Popular requests:**
+- New fintech provider integrations
+- Additional UI components
+- Enhanced security features
+- Performance improvements
+
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+We welcome contributions from the community! Here's how you can help:
+
+### **Quick Start Contributing**
+1. **Fork** the repository
+2. **Clone** your fork: `git clone https://github.com/your-username/all_fintech_sdk.git`
+3. **Create** a branch: `git checkout -b feature/your-feature-name`
+4. **Make** your changes following our coding standards
+5. **Test** your changes thoroughly
+6. **Submit** a pull request
+
+### **Contribution Areas**
+- 🏦 **New Providers** - Add support for more Nigerian fintech APIs
+- 🎨 **UI Components** - Enhance existing or create new Material Design widgets
+- 🔒 **Security** - Improve authentication and encryption features
+- 📚 **Documentation** - Help improve guides and examples
+- 🧪 **Testing** - Add unit tests and integration tests
+- 🐛 **Bug Fixes** - Fix issues and improve stability
+
+### **Development Setup**
+```bash
+# Clone the repository
+git clone https://github.com/chidiebere-edeh/all_fintech_sdk.git
+cd all_fintech_sdk/flutter-sdk/all_fintech_flutter_sdk
+
+# Install dependencies
+flutter pub get
+
+# Run tests
+flutter test
+
+# Run example app
+cd example
+flutter run
+```
+
+### **Coding Standards**
+- Follow Dart/Flutter best practices
+- Maintain the minimal code principle
+- Add documentation for public APIs
+- Include tests for new features
+- Use conventional commit messages
+
+### **Pull Request Guidelines**
+- **Clear title** describing the change
+- **Detailed description** of what was changed and why
+- **Link related issues** using `Fixes #123` or `Closes #123`
+- **Test coverage** for new functionality
+- **Documentation updates** if needed
+
+[**View Contributing Guide →**](https://github.com/chidiebere-edeh/all_fintech_sdk/blob/main/CONTRIBUTING.md)
 
 ## 📄 License
 
