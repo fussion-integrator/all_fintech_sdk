@@ -1,0 +1,16 @@
+enum FintechProvider {
+  paystack,
+  flutterwave,
+  kuda,
+  squad,
+  fairmoney,
+  mint,
+  interswitch,
+  remita,
+  opay,
+  palmpay,
+  monnify,
+  bankone,
+  brass,
+  openBanking,
+}

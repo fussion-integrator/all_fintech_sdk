@@ -1,0 +1,41 @@
+name: all_fintech_flutter_sdk
+description: The most comprehensive Flutter SDK for Nigerian fintech APIs. Integrate Paystack, Flutterwave, Monnify, Opay, and Open Banking with beautiful UI components and enterprise security.
+version: 1.0.0
+homepage: https://github.com/chidiebere-edeh/all_fintech_sdk
+repository: https://github.com/chidiebere-edeh/all_fintech_sdk
+issue_tracker: https://github.com/chidiebere-edeh/all_fintech_sdk/issues
+documentation: https://github.com/chidiebere-edeh/all_fintech_sdk/wiki
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+topics:
+  - fintech
+  - payments
+  - paystack
+  - flutterwave
+  - monnify
+  - opay
+  - open-banking
+  - nigeria
+  - banking
+  - financial-services
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+  crypto: ^3.0.3
+  path_provider: ^2.1.1
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  mockito: ^5.4.2
+  build_runner: ^2.4.7
+  json_serializable: ^6.7.1
+
+flutter:

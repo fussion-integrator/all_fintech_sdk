@@ -1,0 +1,32 @@
+# Files and directories to exclude from pub package
+
+# Build outputs
+build/
+.dart_tool/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+test/
+coverage/
+
+# Development files
+.env
+.env.local
+.env.development
+.env.production
+
+# Documentation drafts
+docs/drafts/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
