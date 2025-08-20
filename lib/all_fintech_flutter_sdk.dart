@@ -37,3 +37,5 @@ export 'src/providers/opay/opay_provider.dart';
 export 'src/providers/opay/models/opay_models.dart';
 export 'src/providers/open_banking/open_banking_provider.dart';
 export 'src/providers/open_banking/models/open_banking_models.dart';
+export 'src/providers/transactpay/transactpay_provider.dart';
+export 'src/providers/transactpay/models/transactpay_models.dart';

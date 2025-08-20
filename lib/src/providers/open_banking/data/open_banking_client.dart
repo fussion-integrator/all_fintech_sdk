@@ -49,10 +49,10 @@ class OpenBankingClient {
         _bearerToken = data['access_token'];
         return _bearerToken!;
       } else {
-        throw FintechException('Failed to get access token: ${response.body}');
+        throw FintechException(message: 'Failed to get access token: ${response.body}');
       }
     } catch (e) {
-      throw FintechException('Authentication error: ${e.toString()}');
+      throw FintechException(message: 'Authentication error: ${e.toString()}');
     }
   }
 
@@ -107,7 +107,7 @@ class OpenBankingClient {
           response = await http.delete(uri, headers: headers);
           break;
         default:
-          throw FintechException('Unsupported HTTP method: $method');
+          throw FintechException(message: 'Unsupported HTTP method: $method');
       }
 
       final responseData = json.decode(response.body);
@@ -116,14 +116,14 @@ class OpenBankingClient {
         return responseData;
       } else if (response.statusCode == 401) {
         _bearerToken = null; // Reset token for retry
-        throw const FintechException('Unauthorized: Token expired or invalid');
+        throw const FintechException(message: 'Unauthorized: Token expired or invalid');
       } else {
         final error = responseData['message'] ?? 'Unknown error';
-        throw FintechException('HTTP ${response.statusCode}: $error');
+        throw FintechException(message: 'HTTP ${response.statusCode}: $error');
       }
     } catch (e) {
       if (e is FintechException) rethrow;
-      throw FintechException('Network error: ${e.toString()}');
+      throw FintechException(message: 'Network error: ${e.toString()}');
     }
   }
 

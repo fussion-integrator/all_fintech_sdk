@@ -235,7 +235,7 @@ class _FlutterwaveCustomerFormState extends State<FlutterwaveCustomerForm> {
           ? await widget.dataService.updateCustomer(widget.customer!.id!, request)
           : await widget.dataService.createCustomer(request);
       
-      if (response.success && mounted) {
+      if (response.status && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Customer ${widget.customer != null ? 'updated' : 'created'} successfully')),
         );

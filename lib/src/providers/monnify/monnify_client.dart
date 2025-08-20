@@ -153,6 +153,7 @@ class MonnifyClient {
       if (data['requestSuccessful'] == true) {
         final responseData = fromJson != null ? fromJson(data['responseBody']) : data['responseBody'] as T;
         return ApiResponse(
+          status: true,
           data: responseData,
           message: data['responseMessage'] ?? 'Success',
         );

@@ -8,6 +8,7 @@ import '../providers/flutterwave/flutterwave_provider.dart';
 import '../providers/monnify/monnify_provider.dart';
 import '../providers/opay/opay_provider.dart';
 import '../providers/open_banking/open_banking_provider.dart';
+import '../providers/transactpay/transactpay_provider.dart';
 
 /// The main SDK class providing access to all Nigerian fintech providers.
 /// 
@@ -20,6 +21,7 @@ class AllFintechSDK {
   MonnifyProvider? _monnify;
   OpayProvider? _opay;
   OpenBankingProvider? _openBanking;
+  TransactPayProvider? _transactpay;
   WebhookManager? _webhookManager;
   OfflineManager? _offlineManager;
   CircuitBreaker? _circuitBreaker;
@@ -82,6 +84,16 @@ class AllFintechSDK {
     return _openBanking!;
   }
 
+  /// Get TransactPay provider instance
+  TransactPayProvider get transactpay {
+    _transactpay ??= TransactPayProvider(
+      apiKey: _config.apiKey,
+      encryptionKey: _config.publicKey ?? '',
+      isTestMode: !_config.isLive,
+    );
+    return _transactpay!;
+  }
+
   /// Get current configuration
   FintechConfig get config => _config;
 
@@ -93,6 +105,7 @@ class AllFintechSDK {
       case FintechProvider.monnify:
       case FintechProvider.opay:
       case FintechProvider.openBanking:
+      case FintechProvider.transactpay:
         return true;
       default:
         return false;

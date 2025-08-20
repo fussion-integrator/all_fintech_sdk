@@ -25,7 +25,7 @@ class OpayProvider {
     );
     
     final dataService = OpayDataService(client);
-    final uiService = OpayUIService(dataService);
+    final uiService = OpayUIService();
 
     return OpayProvider._(
       data: dataService,

@@ -288,7 +288,7 @@ class _FlutterwaveOrchestrationFormState extends State<FlutterwaveOrchestrationF
           ? await widget.dataService.createOrchestratorOrder(request)
           : await widget.dataService.createOrchestratorCharge(request);
       
-      if (response.success && mounted) {
+      if (response.status && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('${widget.isOrder ? 'Order' : 'Charge'} created successfully')),
         );

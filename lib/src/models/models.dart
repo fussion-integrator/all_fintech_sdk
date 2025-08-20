@@ -3,6 +3,8 @@ export 'payment_request.dart';
 export 'customer.dart';
 export 'subscription.dart';
 export 'product.dart';
+export 'payment_page.dart';
+export 'subaccount.dart';
 export 'transfer_recipient.dart';
 export 'transfer.dart';
 export 'verification.dart';

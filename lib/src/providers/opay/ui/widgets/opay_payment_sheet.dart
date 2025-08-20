@@ -41,9 +41,8 @@ class _OpayPaymentSheetState extends State<OpayPaymentSheet> {
   final _mobileController = TextEditingController();
   
   OpayPaymentChannel? _selectedChannel;
-  String? _selectedBank;
+
   bool _isLoading = false;
-  final Map<String, OpayChannelGroup> _availableChannels = {};
 
   final Map<OpayPaymentChannel, String> _channelTitles = {
     OpayPaymentChannel.banklink: 'Internet Banking',

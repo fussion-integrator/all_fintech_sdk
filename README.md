@@ -125,6 +125,59 @@ await monnifySDK.monnify.ui.showPaymentSheet(
 );
 ```
 
+## 💰 TransactPay Integration
+
+```dart
+// Initialize TransactPay (uses encrypted communication)
+final transactPaySDK = AllFintechSDK.initialize(
+  provider: FintechProvider.transactpay,
+  apiKey: 'your-api-key',
+  publicKey: 'your-encryption-key',
+  isLive: false,
+);
+
+// Create order
+final order = await transactPaySDK.transactpay.data.createOrder(
+  TransactPayOrderRequest(
+    reference: 'TXN-${DateTime.now().millisecondsSinceEpoch}',
+    amount: 75000,
+    currency: 'NGN',
+    customer: TransactPayCustomer(
+      email: 'customer@example.com',
+      firstName: 'John',
+      lastName: 'Doe',
+    ),
+    narration: 'Payment for services',
+  ),
+);
+
+// Show payment sheet with card/bank options
+await transactPaySDK.transactpay.ui.showPaymentSheet(
+  context: context,
+  amount: 75000,
+  customerEmail: 'customer@example.com',
+  customerFirstName: 'John',
+  customerLastName: 'Doe',
+  narration: 'Payment for services',
+  onSuccess: (response) {
+    print('TransactPay payment successful: ${response.reference}');
+  },
+  onError: (error) {
+    print('Payment failed: $error');
+  },
+);
+
+// Bank transfer payment
+await transactPaySDK.transactpay.ui.showBankTransferSheet(
+  context: context,
+  orderReference: order.reference,
+  amount: 75000,
+  onSuccess: (response) {
+    print('Bank transfer initiated: ${response.reference}');
+  },
+);
+```
+
 ## 🏦 Open Banking Integration
 
 ```dart
@@ -291,6 +344,7 @@ switch (currentProvider) {
 | **Flutterwave** | ✅ | ✅ | ✅ | ✅ | ❌ |
 | **Monnify** | ✅ | ✅ | ❌ | ❌ | ❌ |
 | **Opay** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **TransactPay** | ✅ | ❌ | ✅ | ❌ | ❌ |
 | **Open Banking** | ❌ | ❌ | ❌ | ❌ | ✅ |
 
 ## 🔒 Security Features

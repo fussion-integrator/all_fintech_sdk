@@ -246,7 +246,7 @@ class _FlutterwaveOrderFormState extends State<FlutterwaveOrderForm> {
 
       final response = await widget.dataService.createOrder(request);
       
-      if (response.success && mounted) {
+      if (response.status && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Order created successfully')),
         );

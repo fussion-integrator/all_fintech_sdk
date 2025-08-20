@@ -1,6 +1,6 @@
 name: all_fintech_flutter_sdk
 description: The most comprehensive Flutter SDK for Nigerian fintech APIs. Integrate Paystack, Flutterwave, Monnify, Opay, and Open Banking with beautiful UI components and enterprise security.
-version: 1.0.1
+version: 1.1.4
 homepage: https://github.com/fussion-integrator/all_fintech_sdk
 repository: https://github.com/fussion-integrator/all_fintech_sdk
 issue_tracker: https://github.com/fussion-integrator/all_fintech_sdk/issues

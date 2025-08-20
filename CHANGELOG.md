@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2] - 2024-12-19
+
+### Fixed
+- Fixed broken string literals in Flutterwave charge form
+- Fixed type assignment issues in Paystack data service
+- Added missing Product and PaymentPage models for Paystack
+- Fixed null safety issues in subscription form
+- Fixed Opay client List.from type casting
+- Removed unused fields and unreachable code
+- Fixed deprecated withOpacity usage
+- Added publish_to: none in example to fix dependency warning
+- Resolved all remaining critical compilation errors
+
+## [1.1.1] - 2024-12-19
+
+### Fixed
+- Fixed all FintechException constructor calls across providers
+- Fixed ApiResponse constructor calls to use 'status' parameter
+- Fixed Flutterwave client parameter naming (queryParameters → queryParams)
+- Fixed broken string literals in UI components
+- Fixed unused imports and fields
+- Fixed example app State class name conflict
+- Fixed test file undefined Calculator function
+- Applied dart fix for super parameters and unnecessary imports
+- Resolved all critical compilation errors
+
+## [1.1.0] - 2024-12-19
+
+### Added
+- **TransactPay Integration** - Complete API support with encrypted communication
+- TransactPay order creation and management
+- Card payment processing with PIN support
+- Bank transfer payment options
+- Order verification and status tracking
+- Fee calculation and refund processing
+- Material Design 3 payment sheets and forms
+- Bank selection dialog with complete bank list
+- Secure card form with validation and formatting
+
 ## [1.0.1] - 2024-12-19
 
 ### Fixed

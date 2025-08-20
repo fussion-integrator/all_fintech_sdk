@@ -64,7 +64,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/transactions',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveTransaction.fromJson(item))
           .toList(),
@@ -102,7 +102,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/transfers',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveTransfer.fromJson(item))
           .toList(),
@@ -124,7 +124,7 @@ class FlutterwaveDataService {
   }) async {
     return await _client.get(
       '/transfers/fee',
-      queryParameters: {
+      queryParams: {
         'amount': amount,
         'currency': currency,
       },
@@ -147,7 +147,7 @@ class FlutterwaveDataService {
   Future<ApiResponse<List<FlutterwaveBank>>> getBanksByCountry(String country) async {
     return await _client.get(
       '/banks',
-      queryParameters: {'country': country},
+      queryParams: {'country': country},
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveBank.fromJson(item))
           .toList(),
@@ -158,7 +158,7 @@ class FlutterwaveDataService {
   Future<ApiResponse<List<FlutterwaveMobileNetwork>>> getMobileNetworks(String country) async {
     return await _client.get(
       '/mobile-networks',
-      queryParameters: {'country': country},
+      queryParams: {'country': country},
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveMobileNetwork.fromJson(item))
           .toList(),
@@ -221,7 +221,7 @@ class FlutterwaveDataService {
   }) async {
     return await _client.get(
       '/customers',
-      queryParameters: {
+      queryParams: {
         'page': page,
         'size': size,
       },
@@ -270,7 +270,7 @@ class FlutterwaveDataService {
   }) async {
     return await _client.post(
       '/customers/search',
-      queryParameters: {
+      queryParams: {
         'page': page,
         'size': size,
       },
@@ -311,7 +311,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/charges',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveCharge.fromJson(item))
           .toList(),
@@ -384,7 +384,7 @@ class FlutterwaveDataService {
   }) async {
     return await _client.get(
       '/payment-methods',
-      queryParameters: {
+      queryParams: {
         'page': page,
         'size': size,
       },
@@ -471,7 +471,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/transfers',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveTransfer.fromJson(item))
           .toList(),
@@ -523,7 +523,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/transfers/recipients',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveTransferRecipient.fromJson(item))
           .toList(),
@@ -570,7 +570,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/transfers/senders',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data['senders'] as List)
           .map((item) => FlutterwaveTransferSender.fromJson(item))
           .toList(),
@@ -644,7 +644,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/settlements',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveSettlement.fromJson(item))
           .toList(),
@@ -659,7 +659,7 @@ class FlutterwaveDataService {
   }) async {
     return await _client.get(
       '/settlements/$settlementId',
-      queryParameters: {
+      queryParams: {
         'page': page,
         'size': size,
       },
@@ -685,7 +685,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/chargebacks',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveChargeback.fromJson(item))
           .toList(),
@@ -781,7 +781,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/fees',
-      queryParameters: queryParams,
+      queryParams: queryParams,
     );
   }
 
@@ -809,7 +809,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/orders',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveOrder.fromJson(item))
           .toList(),
@@ -872,7 +872,7 @@ class FlutterwaveDataService {
 
     return await _client.get(
       '/virtual-accounts',
-      queryParameters: queryParams,
+      queryParams: queryParams,
       fromJson: (data) => (data as List)
           .map((item) => FlutterwaveVirtualAccount.fromJson(item))
           .toList(),

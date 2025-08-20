@@ -224,7 +224,7 @@ class _FlutterwaveTransferFormState extends State<FlutterwaveTransferForm> {
     setState(() => _isLoadingBanks = true);
     try {
       final response = await widget.dataService.listBanks('NG');
-      if (response.success) {
+      if (response.status) {
         setState(() => _banks = response.data!);
       }
     } catch (e) {
@@ -258,7 +258,7 @@ class _FlutterwaveTransferFormState extends State<FlutterwaveTransferForm> {
 
       final response = await widget.dataService.createTransfer(request);
       
-      if (response.success && mounted) {
+      if (response.status && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Transfer initiated successfully')),
         );

@@ -1167,7 +1167,7 @@ class PaystackDataService {
     String? merchantNote,
   }) async {
     final data = {'transaction': transaction};
-    if (amount != null) data['amount'] = amount;
+    if (amount != null) data['amount'] = amount.toString();
     if (currency != null) data['currency'] = currency;
     if (customerNote != null) data['customer_note'] = customerNote;
     if (merchantNote != null) data['merchant_note'] = merchantNote;

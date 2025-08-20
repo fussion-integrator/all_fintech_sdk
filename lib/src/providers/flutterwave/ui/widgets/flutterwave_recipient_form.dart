@@ -292,7 +292,7 @@ class _FlutterwaveRecipientFormState extends State<FlutterwaveRecipientForm> {
 
       final response = await widget.dataService.createTransferRecipient(request);
       
-      if (response.success && mounted) {
+      if (response.status && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Transfer recipient created successfully')),
         );

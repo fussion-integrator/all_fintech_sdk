@@ -153,7 +153,7 @@ class _FlutterwavePaymentSheetState extends State<FlutterwavePaymentSheet> {
 
       final response = await widget.dataService.initializePayment(request);
       
-      if (response.success && mounted) {
+      if (response.status && mounted) {
         // In a real implementation, you would open the payment URL
         // For now, we'll simulate a successful payment
         ScaffoldMessenger.of(context).showSnackBar(

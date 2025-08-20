@@ -154,7 +154,13 @@ class _FlutterwaveChargeFormState extends State<FlutterwaveChargeForm> {
                     const SizedBox(height: 16),
                     Row(
                       children: [
-                        Checkbox(\n                          value: _recurring,\n                          onChanged: (value) => setState(() => _recurring = value ?? false),\n                        ),\n                        const Text('Recurring charge'),\n                      ],\n                    ),
+                        Checkbox(
+                          value: _recurring,
+                          onChanged: (value) => setState(() => _recurring = value ?? false),
+                        ),
+                        const Text('Recurring charge'),
+                      ],
+                    ),
                     const SizedBox(height: 32),
                     SizedBox(
                       width: double.infinity,
@@ -257,7 +263,7 @@ class _FlutterwaveChargeFormState extends State<FlutterwaveChargeForm> {
 
       final response = await widget.dataService.createCharge(request);
       
-      if (response.success && mounted) {
+      if (response.status && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Charge created successfully')),
         );

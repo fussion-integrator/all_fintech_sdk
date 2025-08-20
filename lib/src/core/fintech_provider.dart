@@ -14,4 +14,5 @@ enum FintechProvider {
   bankone,
   brass,
   openBanking,
+  transactpay,
 }

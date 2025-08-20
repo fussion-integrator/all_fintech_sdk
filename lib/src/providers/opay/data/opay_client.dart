@@ -62,7 +62,7 @@ class OpayClient {
           final errors = responseData['errors'];
           
           if (errors != null && errors != '[]' && errors.isNotEmpty) {
-            throw FintechException('Opay API Error: $errors');
+            throw FintechException(message: 'Opay API Error: $errors');
           }
           
           return responseData['result'] ?? {};
@@ -70,11 +70,11 @@ class OpayClient {
         
         return jsonResponse;
       } else {
-        throw FintechException('HTTP ${response.statusCode}: ${response.body}');
+        throw FintechException(message: 'HTTP ${response.statusCode}: ${response.body}');
       }
     } catch (e) {
       if (e is FintechException) rethrow;
-      throw FintechException('Network error: ${e.toString()}');
+      throw FintechException(message: 'Network error: ${e.toString()}');
     }
   }
 
@@ -102,7 +102,7 @@ class OpayClient {
     };
     
     final result = await _makeRequest('/api/transactions/', data);
-    return List<Map<String, dynamic>>.from(result);
+    return (result as List).cast<Map<String, dynamic>>();
   }
 
   Future<Map<String, dynamic>> listChannels(Map<String, dynamic> data) async {

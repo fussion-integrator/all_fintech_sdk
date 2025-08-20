@@ -306,7 +306,7 @@ class _FlutterwaveDirectTransferFormState extends State<FlutterwaveDirectTransfe
 
       final response = await widget.dataService.createDirectTransfer(request);
       
-      if (response.success && mounted) {
+      if (response.status && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Direct transfer created successfully')),
         );

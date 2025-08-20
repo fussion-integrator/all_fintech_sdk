@@ -88,7 +88,7 @@ class _SubscriptionFormState extends State<SubscriptionForm> {
           value: customer,
           child: Text(
             '${customer.firstName ?? ''} ${customer.lastName ?? ''}'.trim().isEmpty
-                ? customer.email
+                ? customer.email ?? 'Unknown'
                 : '${customer.firstName ?? ''} ${customer.lastName ?? ''}'.trim(),
           ),
         );
@@ -193,7 +193,7 @@ class _SubscriptionFormState extends State<SubscriptionForm> {
     if (!_formKey.currentState!.validate()) return;
 
     final request = SubscriptionRequest(
-      customer: _selectedCustomer!.customerCode,
+      customer: _selectedCustomer!.customerCode ?? '',
       plan: _selectedPlan!.planCode,
       startDate: _startDate,
     );

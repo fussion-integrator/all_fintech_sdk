@@ -1,6 +1,7 @@
 name: all_fintech_flutter_sdk_example
 description: Example app demonstrating All Fintech Flutter SDK usage
 version: 1.0.0+1
+publish_to: none
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import '../models/opay_models.dart';
-import '../data/opay_data_service.dart';
 import 'widgets/opay_payment_sheet.dart';
 
+/// Opay UI service for payment operations.
 class OpayUIService {
-  final OpayDataService _dataService;
-
-  OpayUIService(this._dataService);
+  OpayUIService();
 
   Future<void> showPaymentSheet({
     required BuildContext context,
@@ -95,7 +93,6 @@ class OpayUIService {
         color = Colors.orange;
         break;
       case OpayPaymentStatus.notFinished:
-      default:
         title = 'Payment Pending';
         message = 'The payment is still being processed.';
         icon = Icons.hourglass_empty;
