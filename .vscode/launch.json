@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Example App",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "example",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "Example App (Profile)",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "example",
+      "program": "lib/main.dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "Example App (Release)",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "example",
+      "program": "lib/main.dart",
+      "flutterMode": "release"
+    }
+  ]
+}

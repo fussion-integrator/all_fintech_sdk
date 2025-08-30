@@ -9,6 +9,12 @@ import '../providers/monnify/monnify_provider.dart';
 import '../providers/opay/opay_provider.dart';
 import '../providers/open_banking/open_banking_provider.dart';
 import '../providers/transactpay/transactpay_provider.dart';
+import '../providers/google_pay/google_pay_provider.dart';
+import '../providers/google_pay/models/google_pay_models.dart';
+import '../providers/apple_pay/apple_pay_provider.dart';
+import '../providers/apple_pay/models/apple_pay_models.dart';
+import '../providers/paypal/paypal_provider.dart';
+import '../providers/paypal/models/paypal_models.dart';
 
 /// The main SDK class providing access to all Nigerian fintech providers.
 /// 
@@ -22,6 +28,9 @@ class AllFintechSDK {
   OpayProvider? _opay;
   OpenBankingProvider? _openBanking;
   TransactPayProvider? _transactpay;
+  GooglePayProvider? _googlePay;
+  ApplePayProvider? _applePay;
+  PayPalProvider? _paypal;
   WebhookManager? _webhookManager;
   OfflineManager? _offlineManager;
   CircuitBreaker? _circuitBreaker;
@@ -86,12 +95,54 @@ class AllFintechSDK {
 
   /// Get TransactPay provider instance
   TransactPayProvider get transactpay {
-    _transactpay ??= TransactPayProvider(
+    _transactpay ??= TransactPayProvider.initialize(
       apiKey: _config.apiKey,
-      encryptionKey: _config.publicKey ?? '',
+      secretKey: _config.publicKey ?? '',
+      encryptionKey: 'default_encryption_key', // Should be configured
       isTestMode: !_config.isLive,
     );
     return _transactpay!;
+  }
+
+  /// Get Google Pay provider instance
+  GooglePayProvider get googlePay {
+    _googlePay ??= GooglePayProvider.initialize(
+      merchantId: _config.apiKey,
+      merchantName: _config.publicKey ?? 'Default Merchant',
+      countryCode: 'US', // Default, should be configurable
+      currencyCode: 'USD', // Default, should be configurable
+      environment: _config.isLive 
+        ? GooglePayEnvironment.production 
+        : GooglePayEnvironment.test,
+    );
+    return _googlePay!;
+  }
+
+  /// Get Apple Pay provider instance
+  ApplePayProvider get applePay {
+    _applePay ??= ApplePayProvider.initialize(
+      merchantId: _config.apiKey,
+      merchantName: _config.publicKey ?? 'Default Merchant',
+      countryCode: 'US', // Default, should be configurable
+      currencyCode: 'USD', // Default, should be configurable
+      environment: _config.isLive 
+        ? ApplePayEnvironment.production 
+        : ApplePayEnvironment.sandbox,
+    );
+    return _applePay!;
+  }
+
+  /// Get PayPal provider instance
+  PayPalProvider get paypal {
+    _paypal ??= PayPalProvider.initialize(
+      clientId: _config.apiKey,
+      clientSecret: _config.publicKey ?? '',
+      environment: _config.isLive 
+        ? PayPalEnvironment.production 
+        : PayPalEnvironment.sandbox,
+      currencyCode: 'USD', // Default, should be configurable
+    );
+    return _paypal!;
   }
 
   /// Get current configuration
@@ -106,6 +157,9 @@ class AllFintechSDK {
       case FintechProvider.opay:
       case FintechProvider.openBanking:
       case FintechProvider.transactpay:
+      case FintechProvider.googlePay:
+      case FintechProvider.applePay:
+      case FintechProvider.paypal:
         return true;
       default:
         return false;

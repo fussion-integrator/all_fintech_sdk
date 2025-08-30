@@ -1,41 +1,94 @@
 name: all_fintech_flutter_sdk
-description: The most comprehensive Flutter SDK for Nigerian fintech APIs. Integrate Paystack, Flutterwave, Monnify, Opay, and Open Banking with beautiful UI components and enterprise security.
-version: 1.1.4
-homepage: https://github.com/fussion-integrator/all_fintech_sdk
-repository: https://github.com/fussion-integrator/all_fintech_sdk
-issue_tracker: https://github.com/fussion-integrator/all_fintech_sdk/issues
-documentation: https://github.com/fussion-integrator/all_fintech_sdk/wiki
+description: >
+  The most comprehensive Flutter SDK for Nigerian fintech APIs.
+  Integrate Paystack, Flutterwave, Monnify, Opay, and Open Banking
+  with beautiful UI components and enterprise security.
+version: 1.2.0
 
+# Repository information
+homepage: https://github.com/chidiebere-edeh/all_fintech_sdk
+repository: https://github.com/chidiebere-edeh/all_fintech_sdk
+issue_tracker: https://github.com/chidiebere-edeh/all_fintech_sdk/issues
+documentation: https://pub.dev/documentation/all_fintech_flutter_sdk/latest/
+
+# Funding
+funding:
+  - https://github.com/sponsors/chidiebere-edeh
+
+# Environment constraints
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=3.0.0"
+  flutter: '>=3.0.0'
 
+# Package topics for discoverability
 topics:
   - fintech
   - payments
   - nigeria
   - banking
   - flutter
+  - paystack
+  - flutterwave
+  - monnify
+  - opay
+  - open-banking
 
+# Production dependencies
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.1.0
-  crypto: ^3.0.3
-  path_provider: ^2.1.1
-  json_annotation: ^4.8.1
+  
+  # HTTP client
+  http: ^1.5.0
+  
+  # Cryptography
+  crypto: ^3.0.6
+  
+  # File system access
+  path_provider: ^2.1.5
+  
+  # JSON serialization
+  json_annotation: ^4.9.0
+  
+  # Logging
+  logging: ^1.3.0
+  
+  # State management
+  meta: ^1.16.0
+  
+  # Google Pay integration
+  pay: ^3.2.1
 
+# Development dependencies
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
-  mockito: ^5.4.2
-  build_runner: ^2.4.7
-  json_serializable: ^6.7.1
+  
+  # Linting
+  flutter_lints: ^6.0.0
+  very_good_analysis: ^9.0.0
+  
+  # Testing
+  mockito: ^5.5.0
+  test: ^1.25.15
+  
+  # Code generation
+  build_runner: ^2.7.0
+  json_serializable: ^6.11.0
+  
+  # Documentation
+  dartdoc: ^8.3.4
 
+# Flutter configuration
 flutter:
   uses-material-design: true
+  
+  # Assets
+  assets:
+    - assets/images/
+    - assets/icons/
 
+# Supported platforms
 platforms:
   android:
   ios:
@@ -43,3 +96,12 @@ platforms:
   windows:
   macos:
   linux:
+
+# Screenshots for pub.dev
+screenshots:
+  - description: 'Paystack Payment Sheet'
+    path: screenshots/paystack_payment.png
+  - description: 'Flutterwave Integration'
+    path: screenshots/flutterwave_payment.png
+  - description: 'Monnify Payment Flow'
+    path: screenshots/monnify_payment.png

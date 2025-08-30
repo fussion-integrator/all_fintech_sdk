@@ -2,96 +2,144 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.1.2] - 2024-12-19
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### Fixed
-- Fixed broken string literals in Flutterwave charge form
-- Fixed type assignment issues in Paystack data service
-- Added missing Product and PaymentPage models for Paystack
-- Fixed null safety issues in subscription form
-- Fixed Opay client List.from type casting
-- Removed unused fields and unreachable code
-- Fixed deprecated withOpacity usage
-- Added publish_to: none in example to fix dependency warning
-- Resolved all remaining critical compilation errors
-
-## [1.1.1] - 2024-12-19
-
-### Fixed
-- Fixed all FintechException constructor calls across providers
-- Fixed ApiResponse constructor calls to use 'status' parameter
-- Fixed Flutterwave client parameter naming (queryParameters → queryParams)
-- Fixed broken string literals in UI components
-- Fixed unused imports and fields
-- Fixed example app State class name conflict
-- Fixed test file undefined Calculator function
-- Applied dart fix for super parameters and unnecessary imports
-- Resolved all critical compilation errors
-
-## [1.1.0] - 2024-12-19
+## [1.2.0] - 2024-01-15
 
 ### Added
-- **TransactPay Integration** - Complete API support with encrypted communication
-- TransactPay order creation and management
-- Card payment processing with PIN support
-- Bank transfer payment options
-- Order verification and status tracking
-- Fee calculation and refund processing
-- Material Design 3 payment sheets and forms
-- Bank selection dialog with complete bank list
-- Secure card form with validation and formatting
+- **Google Pay Integration** - Complete Android payment processing
+  - Payment token requests with device validation
+  - Material Design 3 payment buttons and sheets
+  - Multi-theme support (dark/light)
+  - Comprehensive error handling
+- **Apple Pay Integration** - Native iOS payment processing
+  - PassKit integration with biometric authentication
+  - Multiple button styles following Apple HIG
+  - Contact information collection
+  - Platform-specific validation
+- **PayPal Integration** - Global payment processing
+  - OAuth 2.0 authentication with automatic token refresh
+  - Multi-currency support (100+ currencies)
+  - Itemized billing with breakdown calculations
+  - Subscription payment support
+- **Opay Demo Screen** - Complete payment channel demonstrations
+- **World-class Main Demo Screen** - Professional navigation interface
+  - Categorized provider sections
+  - Feature highlights and statistics
+  - Material Design 3 theming
+  - Responsive grid layout
 
-## [1.0.1] - 2024-12-19
+### Enhanced
+- **Dual Architecture Pattern** - Consistent data + UI services across all providers
+- **Error Handling** - Comprehensive exception types with detailed error codes
+- **Logging System** - Professional request/response logging
+- **Type Safety** - Complete null safety implementation
+- **Documentation** - Extensive API documentation and usage examples
 
 ### Fixed
-- Fixed BulkChargeRequest toJson return type error
-- Added platform support for better pub.dev scoring
-- Resolved static analysis issues
+- Provider initialization edge cases
+- Memory leaks in HTTP clients
+- Widget disposal in demo screens
 
-## [1.0.0] - 2024-12-19
+## [1.1.0] - 2023-12-01
 
 ### Added
-- **Initial Release** - Complete Flutter SDK for Nigerian fintech APIs
-- **Paystack Integration** - Full API coverage with payments, transfers, customers, subscriptions
-- **Flutterwave Integration** - Complete API support with charges, customers, transfers, virtual accounts
-- **Monnify Integration** - OAuth 2.0 authentication with transactions, reserved accounts, transfers
-- **Opay Integration** - Payment channels, transactions, recurring payments, refunds
-- **Open Banking Integration** - Nigerian Open Banking API standard compliance with savings and accounts
-- **Dual Architecture** - Data-only and UI-enabled operations for all providers
-- **Security Features** - Signature verification, OAuth 2.0, webhook handling, encryption
-- **UI Components** - Material Design 3 payment sheets, forms, dialogs, and management screens
-- **Enterprise Features** - Offline support, circuit breaker patterns, enhanced error handling
-- **Type Safety** - Complete Dart models with null safety support
-- **Production Ready** - Comprehensive error handling and retry mechanisms
+- **Monnify Provider** - Reserved accounts and bulk transfers
+  - OAuth 2.0 authentication
+  - Reserved account creation and management
+  - Single and bulk transfer operations
+  - Transaction splitting capabilities
+- **TransactPay Provider** - Encrypted payment processing
+  - AES-256-CBC encryption for sensitive data
+  - Order creation and management
+  - Bank transfer payment options
+  - Real-time status checking
+- **Open Banking Provider** - Account aggregation services
+  - Customer consent management
+  - Account information retrieval
+  - Transaction history access
+  - Balance checking
 
-### Security
-- MD5/SHA-256 signature generation for API security
-- OAuth 2.0 implementation for Monnify and Open Banking
-- AES-256-CBC encryption for sensitive data
-- Webhook signature verification
-- Automatic token refresh and management
+### Enhanced
+- **Security Framework** - Enterprise-grade security features
+  - Signature verification for all API requests
+  - Automatic token refresh mechanisms
+  - Secure credential storage
+- **UI Components** - Material Design 3 compliance
+  - Payment sheets with animations
+  - Loading states and error handling
+  - Responsive design patterns
 
-### Documentation
-- Comprehensive README with examples for all providers
-- API documentation with detailed usage patterns
-- Code examples for both data-only and UI operations
-- Migration guides and best practices
+## [1.0.0] - 2023-10-15
 
-### Supported Providers
-- Paystack (Payments, Transfers, Customers, Subscriptions, Products)
-- Flutterwave (Charges, Customers, Transfers, Virtual Accounts, Orders)
-- Monnify (Transactions, Reserved Accounts, Transfers, Banking)
-- Opay (Payments, Channels, Recurring, Refunds)
-- Open Banking Nigeria (Savings, Accounts, Transactions)
+### Added
+- **Initial Release** - Core SDK architecture
+- **Paystack Provider** - Complete payment processing
+  - Transaction initialization and verification
+  - Transfer recipient management
+  - Customer creation and management
+  - Subscription handling
+  - Webhook signature verification
+- **Flutterwave Provider** - Multi-channel payments
+  - Charge creation and processing
+  - Virtual account management
+  - Bank transfer operations
+  - Customer management
+- **Opay Provider** - Payment channel integration
+  - Multiple payment methods (Card, Transfer, USSD)
+  - Recurring payment setup
+  - Real-time payment status
+- **Core Architecture**
+  - Dual service pattern (Data + UI)
+  - Comprehensive error handling
+  - Professional logging system
+  - Type-safe models with JSON serialization
+- **Example Application** - Comprehensive demo app
+  - Provider-specific demo screens
+  - Interactive payment flows
+  - Error handling demonstrations
 
-### Technical Features
-- Flutter 3.0+ compatibility
-- Null safety support
-- Material Design 3 UI components
-- Offline request queuing
-- Circuit breaker pattern implementation
-- Enhanced exception handling
-- Webhook management system
-- Idempotency support
-- Pagination handling
-- Custom properties support
+### Technical
+- **Flutter 3.0+** compatibility
+- **Null safety** implementation
+- **Material Design 3** UI components
+- **Enterprise security** features
+- **Offline support** with request queuing
+- **Circuit breaker** patterns for resilience
+
+## [0.1.0] - 2023-09-01
+
+### Added
+- Initial project setup
+- Basic SDK architecture
+- Paystack integration prototype
+- Example application foundation
+
+---
+
+## Migration Guides
+
+### Migrating to 1.2.0
+- No breaking changes
+- New providers are additive
+- Existing code continues to work
+
+### Migrating to 1.1.0
+- Update import statements for new providers
+- Review security configuration for enhanced features
+- Update example app dependencies
+
+### Migrating to 1.0.0
+- Initial stable release
+- Follow setup instructions in README.md
+- Configure provider credentials
+
+---
+
+## Support
+
+For questions, issues, or contributions:
+- [GitHub Issues](https://github.com/chidiebere-edeh/all_fintech_sdk/issues)
+- [Documentation](https://pub.dev/documentation/all_fintech_flutter_sdk/latest/)
+- [Example App](https://github.com/chidiebere-edeh/all_fintech_sdk/tree/main/example)

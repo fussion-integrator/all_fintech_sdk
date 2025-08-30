@@ -1,0 +1,30 @@
+dartdoc:
+  categoryOrder: [
+    "Core",
+    "Providers", 
+    "Models",
+    "Services",
+    "UI Components",
+    "Utilities"
+  ]
+  
+  nodoc: [
+    "*.g.dart",
+    "*.freezed.dart", 
+    "*.mocks.dart"
+  ]
+  
+  include: [
+    "lib/**"
+  ]
+  
+  exclude: [
+    "lib/src/providers/**/ui/widgets/**",
+    "example/**"
+  ]
+  
+  showUndocumentedCategories: true
+  
+  linkToSource:
+    root: "."
+    uriTemplate: "https://github.com/chidiebere-edeh/all_fintech_sdk/blob/main/%f%#L%l%"

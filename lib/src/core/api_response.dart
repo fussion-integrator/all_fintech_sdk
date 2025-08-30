@@ -16,12 +16,12 @@ class ApiResponse<T> {
     T Function(dynamic)? fromJsonT,
   ) {
     return ApiResponse<T>(
-      status: json['status'] ?? false,
-      message: json['message'] ?? '',
+      status: json['status'] as bool? ?? false,
+      message: json['message'] as String? ?? '',
       data: json['data'] != null && fromJsonT != null 
           ? fromJsonT(json['data']) 
-          : json['data'],
-      meta: json['meta'],
+          : json['data'] as T?,
+      meta: json['meta'] as Map<String, dynamic>?,
     );
   }
 

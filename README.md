@@ -1,8 +1,16 @@
 # All Fintech Flutter SDK 🚀
 
+<div align="center">
+
 [![pub package](https://img.shields.io/pub/v/all_fintech_flutter_sdk.svg)](https://pub.dev/packages/all_fintech_flutter_sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Flutter](https://img.shields.io/badge/Flutter-3.0+-blue.svg)](https://flutter.dev)
+[![CI](https://github.com/chidiebere-edeh/all_fintech_sdk/workflows/CI/badge.svg)](https://github.com/chidiebere-edeh/all_fintech_sdk/actions)
+[![codecov](https://codecov.io/gh/chidiebere-edeh/all_fintech_sdk/branch/main/graph/badge.svg)](https://codecov.io/gh/chidiebere-edeh/all_fintech_sdk)
+[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
+[![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
+
+</div>
 
 **The most comprehensive Flutter SDK for Nigerian fintech APIs** - Integrate payments, banking, and financial services with a single, unified interface.
 
@@ -19,9 +27,16 @@
 
 ### Installation
 
+```bash
+# Add to pubspec.yaml
+flutter pub add all_fintech_flutter_sdk
+
+# Or manually add to dependencies
+```
+
 ```yaml
 dependencies:
-  all_fintech_flutter_sdk: ^1.0.0
+  all_fintech_flutter_sdk: ^1.2.0
 ```
 
 ### Basic Setup
@@ -36,6 +51,20 @@ final sdk = AllFintechSDK.initialize(
   publicKey: 'your-public-key', // Optional for some providers
   isLive: false, // Set to true for production
 );
+```
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/chidiebere-edeh/all_fintech_sdk.git
+cd all_fintech_sdk
+
+# Run setup script
+./scripts/setup.sh
+
+# Or use make commands
+make dev-setup
 ```
 
 ## 💳 Payment Examples
@@ -121,6 +150,103 @@ await monnifySDK.monnify.ui.showPaymentSheet(
   paymentReference: 'pay-ref-${DateTime.now().millisecondsSinceEpoch}',
   onSuccess: (transaction) {
     print('Monnify payment completed: ${transaction.transactionReference}');
+  },
+);
+```
+
+## 💳 Google Pay Integration
+
+```dart
+// Initialize Google Pay
+final googlePaySDK = AllFintechSDK.initialize(
+  provider: FintechProvider.googlePay,
+  apiKey: 'your-merchant-id',
+  publicKey: 'Your Merchant Name',
+  isLive: false,
+);
+
+// Check availability
+final availability = await googlePaySDK.googlePay.data.checkAvailability();
+if (availability.isAvailable) {
+  print('Google Pay is available');
+}
+
+// Simple button
+googlePaySDK.googlePay.ui.createSimpleButton(
+  amount: 29.99,
+  onSuccess: (token) {
+    print('Payment successful: ${token.token}');
+  },
+  onError: (error) {
+    print('Payment failed: ${error.message}');
+  },
+);
+
+// Payment sheet
+await googlePaySDK.googlePay.ui.showPaymentSheet(
+  context: context,
+  paymentRequest: GooglePayRequest(
+    amount: 99.99,
+    currencyCode: 'USD',
+    label: 'Premium Subscription',
+    requireEmail: true,
+  ),
+  onPaymentSuccess: (token) {
+    print('Google Pay payment completed: ${token.token}');
+  },
+  onPaymentError: (error) {
+    print('Payment failed: ${error.message}');
+  },
+);
+```
+
+## 🍎 Apple Pay Integration
+
+```dart
+// Initialize Apple Pay (iOS only)
+final applePaySDK = AllFintechSDK.initialize(
+  provider: FintechProvider.applePay,
+  apiKey: 'merchant.com.yourapp.payments',
+  publicKey: 'Your Store Name',
+  isLive: false,
+);
+
+// Check availability
+final availability = await applePaySDK.applePay.data.checkAvailability();
+if (availability.isAvailable) {
+  print('Apple Pay is available');
+}
+
+// Simple button
+applePaySDK.applePay.ui.createSimpleButton(
+  amount: 29.99,
+  onSuccess: (token) {
+    print('Payment successful: ${token.transactionIdentifier}');
+  },
+  onError: (error) {
+    print('Payment failed: ${error.message}');
+  },
+);
+
+// Payment sheet with items
+await applePaySDK.applePay.ui.showPaymentSheet(
+  context: context,
+  paymentRequest: ApplePayRequest(
+    amount: 99.99,
+    currencyCode: 'USD',
+    label: 'Premium Subscription',
+    items: [
+      ApplePayItem(label: 'Monthly Plan', amount: 89.99),
+      ApplePayItem(label: 'Tax', amount: 10.00),
+    ],
+    requiresEmail: true,
+    requiresBillingAddress: true,
+  ),
+  onPaymentSuccess: (token) {
+    print('Apple Pay payment completed: ${token.transactionIdentifier}');
+  },
+  onPaymentError: (error) {
+    print('Payment failed: ${error.message}');
   },
 );
 ```
@@ -345,6 +471,9 @@ switch (currentProvider) {
 | **Monnify** | ✅ | ✅ | ❌ | ❌ | ❌ |
 | **Opay** | ✅ | ❌ | ❌ | ❌ | ❌ |
 | **TransactPay** | ✅ | ❌ | ✅ | ❌ | ❌ |
+| **PayPal** | ✅ | ❌ | ❌ | ✅ | ❌ |
+| **Google Pay** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Apple Pay** | ✅ | ❌ | ❌ | ❌ | ❌ |
 | **Open Banking** | ❌ | ❌ | ❌ | ❌ | ✅ |
 
 ## 🔒 Security Features

@@ -1,0 +1,38 @@
+#!/bin/bash
+# Pre-commit hook for All Fintech SDK
+
+set -e
+
+echo "🔍 Running pre-commit checks..."
+
+# Check if Flutter is available
+if ! command -v flutter &> /dev/null; then
+    echo "❌ Flutter is not installed or not in PATH"
+    exit 1
+fi
+
+# Format code
+echo "📝 Formatting code..."
+dart format --set-exit-if-changed .
+if [ $? -ne 0 ]; then
+    echo "❌ Code formatting failed. Please run 'make format-fix' and commit again."
+    exit 1
+fi
+
+# Run static analysis
+echo "🔍 Running static analysis..."
+flutter analyze --fatal-infos
+if [ $? -ne 0 ]; then
+    echo "❌ Static analysis failed. Please fix the issues and commit again."
+    exit 1
+fi
+
+# Run tests
+echo "🧪 Running tests..."
+flutter test
+if [ $? -ne 0 ]; then
+    echo "❌ Tests failed. Please fix the failing tests and commit again."
+    exit 1
+fi
+
+echo "✅ All pre-commit checks passed!"

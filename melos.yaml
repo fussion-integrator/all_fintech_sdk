@@ -1,0 +1,45 @@
+name: all_fintech_sdk
+
+packages:
+  - packages/**
+  - examples/**
+
+command:
+  bootstrap:
+    runPubGetInParallel: false
+    usePubspecOverrides: true
+
+  version:
+    branch: main
+    message: "chore(release): publish packages"
+    includeScopes: false
+    workspaceChangelog: true
+
+scripts:
+  analyze:
+    run: flutter analyze
+    description: Run static analysis on all packages
+
+  test:
+    run: flutter test
+    description: Run tests for all packages
+
+  format:
+    run: dart format .
+    description: Format all Dart files
+
+  clean:
+    run: flutter clean
+    description: Clean all packages
+
+  get:
+    run: flutter pub get
+    description: Get dependencies for all packages
+
+  build:
+    run: flutter build
+    description: Build all packages
+
+  docs:
+    run: dart doc .
+    description: Generate documentation

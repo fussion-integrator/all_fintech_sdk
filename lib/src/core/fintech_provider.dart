@@ -15,4 +15,7 @@ enum FintechProvider {
   brass,
   openBanking,
   transactpay,
+  googlePay,
+  applePay,
+  paypal,
 }
